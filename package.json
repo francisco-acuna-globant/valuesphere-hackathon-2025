@@ -28,8 +28,7 @@
     "start": "cds-serve",
     "start-local": "npm run generate-entry-point && npm run cds-watch",
     "generate-entry-point": "dev-cap-tools gen-entrypoint",
-    "cds-watch": "cds watch --open",
-    "watch-cashflow-forecast-main": "cds watch --open cashflow-forecast-main/webapp/index.html?sap-ui-xx-viewCache=false"
+    "cds-watch": "cds watch --open"
   },
   "cds": {
     "sql": {
