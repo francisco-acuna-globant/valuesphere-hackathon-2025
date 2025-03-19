@@ -1,0 +1,32 @@
+{
+    "version": "0.2",
+    "floorplan": "FE_LROP",
+    "project": {
+        "name": "cashflow-forecast-main",
+        "targetFolder": "/home/user/projects/valuesphere_hackathon_2025",
+        "title": "A Fiori Elements application for managing cashflow forecasts with CRUD functionalities.",
+        "description": "A Fiori Elements application for managing cashflow forecasts with CRUD functionalities.",
+        "ui5Version": "1.132.1",
+        "localUI5Version": "1.82.2",
+        "sapux": true
+    },
+    "service": {
+        "servicePath": "/service/cashflowForecast/",
+        "capService": {
+            "projectPath": "/home/user/projects/valuesphere_hackathon_2025",
+            "serviceName": "CashflowForecastService",
+            "serviceCdsPath": "srv/service.cds"
+        }
+    },
+    "entityConfig": {
+        "mainEntity": {
+            "entityName": "CashflowWeeklyForecasts"
+        },
+        "generateLROPAnnotations": true
+    },
+    "projectType": "LIST_REPORT_OBJECT_PAGE",
+    "telemetryData": {
+        "generationSourceName": "AI Headless",
+        "generationSourceVersion": "1.16.5"
+    }
+}

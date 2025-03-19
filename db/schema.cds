@@ -20,7 +20,6 @@ entity ForecastDistributionPercentageConfigs : cuid, managed {
   status       : Status default 'NEW';
 }
 
-@assert.unique: {sourceType: [sourceType]}
 entity CashflowWeeklyForecasts : cuid, managed {
   sourceType : String(100) @mandatory;
   company    : String(4)   @mandatory;
