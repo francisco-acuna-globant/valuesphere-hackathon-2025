@@ -1,11 +1,11 @@
-using { valuesphere_hackathon_2025Srv } from '../srv/service.cds';
+using { CashflowForecastService } from '../srv/service.cds';
 
-annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs with @UI.HeaderInfo: { TypeName: 'Forecast Distribution Percentage Config', TypeNamePlural: 'Forecast Distribution Percentage Configs', Title: { Value: category } };
-annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs with {
+annotate CashflowForecastService.ForecastDistributionPercentageConfigs with @UI.HeaderInfo: { TypeName: 'Forecast Distribution Percentage Config', TypeNamePlural: 'Forecast Distribution Percentage Configs', Title: { Value: category } };
+annotate CashflowForecastService.ForecastDistributionPercentageConfigs with {
   ID @UI.Hidden @Common.Text: { $value: category, ![@UI.TextArrangement]: #TextOnly }
 };
-annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs with @UI.Identification: [{ Value: category }];
-annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs with {
+annotate CashflowForecastService.ForecastDistributionPercentageConfigs with @UI.Identification: [{ Value: category }];
+annotate CashflowForecastService.ForecastDistributionPercentageConfigs with {
   category @title: 'Category';
   companyCode @title: 'Company Code';
   validityDate @title: 'Validity Date';
@@ -16,14 +16,14 @@ annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs wit
   modifiedBy @title: 'Modified By'
 };
 
-annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs with @UI.LineItem: [
+annotate CashflowForecastService.ForecastDistributionPercentageConfigs with @UI.LineItem: [
  { $Type: 'UI.DataField', Value: category },
  { $Type: 'UI.DataField', Value: companyCode },
  { $Type: 'UI.DataField', Value: validityDate },
  { $Type: 'UI.DataField', Value: percentage }
 ];
 
-annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs with @UI.FieldGroup #Main: {
+annotate CashflowForecastService.ForecastDistributionPercentageConfigs with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
  { $Type: 'UI.DataField', Value: category },
  { $Type: 'UI.DataField', Value: companyCode },
@@ -36,20 +36,20 @@ annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs wit
   ]
 };
 
-annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs with @UI.Facets: [
+annotate CashflowForecastService.ForecastDistributionPercentageConfigs with @UI.Facets: [
   { $Type: 'UI.ReferenceFacet', ID: 'Main', Label: 'General Information', Target: '@UI.FieldGroup#Main' }
 ];
 
-annotate valuesphere_hackathon_2025Srv.ForecastDistributionPercentageConfigs with @UI.SelectionFields: [
+annotate CashflowForecastService.ForecastDistributionPercentageConfigs with @UI.SelectionFields: [
   category
 ];
 
-annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with @UI.HeaderInfo: { TypeName: 'Cashflow Weekly Forecast', TypeNamePlural: 'Cashflow Weekly Forecasts', Title: { Value: sourceType } };
-annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with {
+annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.HeaderInfo: { TypeName: 'Cashflow Weekly Forecast', TypeNamePlural: 'Cashflow Weekly Forecasts', Title: { Value: sourceType } };
+annotate CashflowForecastService.CashflowWeeklyForecasts with {
   ID @UI.Hidden @Common.Text: { $value: sourceType, ![@UI.TextArrangement]: #TextOnly }
 };
-annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with @UI.Identification: [{ Value: sourceType }];
-annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with {
+annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.Identification: [{ Value: sourceType }];
+annotate CashflowForecastService.CashflowWeeklyForecasts with {
   sourceType @title: 'Source Type';
   company @title: 'Company';
   heads @title: 'Heads';
@@ -114,7 +114,7 @@ annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with {
   modifiedBy @title: 'Modified By'
 };
 
-annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with @UI.LineItem: [
+annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.LineItem: [
  { $Type: 'UI.DataField', Value: sourceType },
  { $Type: 'UI.DataField', Value: company },
  { $Type: 'UI.DataField', Value: heads },
@@ -175,7 +175,7 @@ annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with @UI.LineItem
  { $Type: 'UI.DataField', Value: w53 }
 ];
 
-annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with @UI.FieldGroup #Main: {
+annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
  { $Type: 'UI.DataField', Value: sourceType },
  { $Type: 'UI.DataField', Value: company },
@@ -242,11 +242,11 @@ annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with @UI.FieldGro
   ]
 };
 
-annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with @UI.Facets: [
+annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.Facets: [
   { $Type: 'UI.ReferenceFacet', ID: 'Main', Label: 'General Information', Target: '@UI.FieldGroup#Main' }
 ];
 
-annotate valuesphere_hackathon_2025Srv.CashflowWeeklyForecasts with @UI.SelectionFields: [
+annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.SelectionFields: [
   sourceType
 ];
 
