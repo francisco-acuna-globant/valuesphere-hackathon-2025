@@ -34,7 +34,8 @@
     "watch-cashflow.forecast": "cds watch --open cashflow.forecast/webapp/index.html?sap-ui-xx-viewCache=false",
     "undeploy": "cf undeploy valuesphere_hackathon_2025 --delete-services --delete-service-keys --delete-service-brokers",
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
-    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-forecast.distribution": "cds watch --open forecast.distribution/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "sql": {
@@ -61,6 +62,7 @@
   "lcap": true,
   "sapux": [
     "app/cashflow-forecast-main",
-    "app/cashflow.forecast"
+    "app/cashflow.forecast",
+    "app/forecast.distribution"
   ]
 }

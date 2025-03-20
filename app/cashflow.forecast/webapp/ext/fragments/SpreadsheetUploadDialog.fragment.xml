@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:unified="sap.ui.unified"
+>
+    <Dialog
+        id="spreadsheetDialog"
+        verticalScrolling="false"
+        contentWidth="400px"
+        showHeader="false"
+    >
+        <OverflowToolbar>
+            <Title text="{i18n>MassUpload}" />
+            <ToolbarSpacer />
+            <Button
+                icon="sap-icon://download-from-cloud"
+                text="{i18n>TemplateDownload}"
+                press="onDownloadTemplatePress"
+                class="sapUiTinyMarginEnd"
+            />
+        </OverflowToolbar>
+        <content>
+            <VBox
+                class="sapUiSmallMargin"
+                height="100%"
+            >
+                <unified:FileUploader
+                    id="fileUploader"
+                    name="fileUploader"
+                    fileType="xlsx"
+                    multiple="false"
+                    width="100%"
+                    buttonText="{i18n>BrowseFileButton}"
+                    placeholder="{i18n>SpreadsheetUploadPlaceholder}"
+                    change="onSpreadsheetUpload"
+                />
+            </VBox>
+        </content>
+        <footer>
+            <Toolbar>
+                <Button
+                    id="messagePopoverSpreadsheetDialogButton"
+                    text="{=${message>/}.length}"
+                    visible="{=${message>/}.length > 0}"
+                    icon="{ path: 'message>/', formatter: '.buttonIconFormatter' }"
+                    type="{ path: 'message>/', formatter: '.buttonTypeFormatter' }"
+                    press=".onMessagePopoverPress"
+                />
+                <ToolbarSpacer />
+                <Button
+                    text="{i18n>Cancel}"
+                    press="onSpreadsheetDialogClose"
+                />
+                <Button
+                    id="confirmSpreadsheetUploadButton"
+                    text="{i18n>Confirm}"
+                    press="onConfirmSpreadsheetUpload"
+                    type="Emphasized"
+                    enabled="false"
+                />
+            </Toolbar>
+        </footer>
+    </Dialog>
+</core:FragmentDefinition>
