@@ -49,6 +49,10 @@ sap.ui.define([
 			}
 		},
 
+		onSpreadsheetDialogClose: function () {
+			this._spreadsheetDialog.close();
+			this._spreadsheetDialog.destroy();
+		}
 
 	});
 });

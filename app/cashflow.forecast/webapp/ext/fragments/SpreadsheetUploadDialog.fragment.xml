@@ -38,14 +38,14 @@
         </content>
         <footer>
             <Toolbar>
-                <Button
+<!--                 <Button
                     id="messagePopoverSpreadsheetDialogButton"
                     text="{=${message>/}.length}"
                     visible="{=${message>/}.length > 0}"
                     icon="{ path: 'message>/', formatter: '.buttonIconFormatter' }"
                     type="{ path: 'message>/', formatter: '.buttonTypeFormatter' }"
                     press=".onMessagePopoverPress"
-                />
+                /> -->
                 <ToolbarSpacer />
                 <Button
                     text="{i18n>Cancel}"
@@ -54,7 +54,7 @@
                 <Button
                     id="confirmSpreadsheetUploadButton"
                     text="{i18n>Confirm}"
-                    press="onConfirmSpreadsheetUpload"
+                    press="onSpreadsheetDialogClose"
                     type="Emphasized"
                     enabled="false"
                 />
