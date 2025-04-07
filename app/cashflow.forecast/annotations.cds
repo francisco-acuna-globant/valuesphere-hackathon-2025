@@ -50,6 +50,7 @@ annotate CashflowForecastService.CashflowWeeklyForecasts with {
 };
 annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.Identification: [{ Value: sourceType }];
 annotate CashflowForecastService.CashflowWeeklyForecasts with {
+  status @title: 'Status';
   sourceType @title: 'Source Type';
   company @title: 'Company';
   heads @title: 'Heads';
@@ -115,6 +116,7 @@ annotate CashflowForecastService.CashflowWeeklyForecasts with {
 };
 
 annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.LineItem: [
+ { $Type: 'UI.DataField', Value: status },
  { $Type: 'UI.DataField', Value: sourceType },
  { $Type: 'UI.DataField', Value: company },
  { $Type: 'UI.DataField', Value: heads },
@@ -177,6 +179,7 @@ annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.LineItem: [
 
 annotate CashflowForecastService.CashflowWeeklyForecasts with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
+ { $Type: 'UI.DataField', Value: status },
  { $Type: 'UI.DataField', Value: sourceType },
  { $Type: 'UI.DataField', Value: company },
  { $Type: 'UI.DataField', Value: heads },

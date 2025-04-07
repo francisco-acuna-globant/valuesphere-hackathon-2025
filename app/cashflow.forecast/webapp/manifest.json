@@ -68,8 +68,9 @@
         "preload": true,
         "settings": {
           "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
+          "autoExpandSelect": false,
+          "earlyRequests": true,
+          "synchronizationMode": "None"
         }
       },
       "@i18n": {
@@ -113,9 +114,24 @@
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
-                    "type": "GridTable"
+                    "type": "GridTable",
+                    "selectionChange": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onTableSelectionChange"
                   },
                   "actions": {
+                    "approve": {
+                      "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onApprove",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "Approve"
+                    },
+                    "reject": {
+                      "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onReject",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "Reject"
+                    },
                     "massUpload": {
                       "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onMassUpload",
                       "visible": true,
@@ -123,6 +139,7 @@
                       "requiresSelection": false,
                       "text": "{i18n>MassUpload}"
                     }
+
                   }
                 }
               },
