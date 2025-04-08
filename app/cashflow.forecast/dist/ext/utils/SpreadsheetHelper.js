@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/export/Spreadsheet","sap/ui/export/library"],function(e,i){"use strict";const t=i.EdmType;return{init:function(e){this._oResourceBundle=e}}});
+//# sourceMappingURL=SpreadsheetHelper.js.map

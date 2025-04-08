@@ -114,9 +114,33 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "approve": {
+                      "press": ".extension.hackathon.valuesphere.forecast.distribution.ext.controller.ListReportExtension.onApprove",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "Approve"
+                    },
+                    "reject": {
+                      "press": ".extension.hackathon.valuesphere.forecast.distribution.ext.controller.ListReportExtension.onReject",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "Reject"
+                    },
+                    "massUpload": {
+                      "press": ".extension.hackathon.valuesphere.forecast.distribution.ext.controller.ListReportExtension.onMassUpload",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "Mass Upload"
+                    }
                   }
                 }
-              }
+              },
+              "initialLoad": "Enabled"
             }
           }
         },
@@ -129,6 +153,15 @@
               "editableHeaderContent": false,
               "contextPath": "/ForecastDistributionPercentageConfigs"
             }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ListReport.ListReportController": {
+            "controllerName": "hackathon.valuesphere.forecast.distribution.ext.controller.ListReportExtension"
           }
         }
       }

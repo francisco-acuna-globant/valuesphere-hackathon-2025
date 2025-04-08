@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/core/AppComponent"],function(e){"use strict";return e.extend("hackathon.valuesphere.forecast.distribution.Component",{metadata:{manifest:"json"}})});
+//# sourceMappingURL=Component.js.map

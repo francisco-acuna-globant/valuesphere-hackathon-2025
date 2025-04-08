@@ -1,0 +1,176 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "hackathon.valuesphere.cashflow.forecast",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.16.5",
+            "toolsId": "07033321-6a42-402d-882b-72518373b7ea"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "service/cashflowForecast/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.133.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.fe.templates": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "hackathon.valuesphere.cashflow.forecast.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "operationMode": "Server",
+                    "autoExpandSelect": false,
+                    "earlyRequests": true,
+                    "synchronizationMode": "None"
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "routing": {
+            "config": {},
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "CashflowWeeklyForecastsList",
+                    "target": "CashflowWeeklyForecastsList"
+                },
+                {
+                    "pattern": "CashflowWeeklyForecasts({key}):?query:",
+                    "name": "CashflowWeeklyForecastsObjectPage",
+                    "target": "CashflowWeeklyForecastsObjectPage"
+                }
+            ],
+            "targets": {
+                "CashflowWeeklyForecastsList": {
+                    "type": "Component",
+                    "id": "CashflowWeeklyForecastsList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "contextPath": "/CashflowWeeklyForecasts",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "CashflowWeeklyForecasts": {
+                                    "detail": {
+                                        "route": "CashflowWeeklyForecastsObjectPage"
+                                    }
+                                }
+                            },
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "type": "GridTable",
+                                        "selectionChange": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onTableSelectionChange"
+                                    },
+                                    "actions": {
+                                        "approve": {
+                                            "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onApprove",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "requiresSelection": true,
+                                            "text": "Approve"
+                                        },
+                                        "reject": {
+                                            "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onReject",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "requiresSelection": true,
+                                            "text": "Reject"
+                                        },
+                                        "massUpload": {
+                                            "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onMassUpload",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "requiresSelection": false,
+                                            "text": "Mass Upload"
+                                        }
+                                    }
+                                }
+                            },
+                            "initialLoad": "Enabled"
+                        }
+                    }
+                },
+                "CashflowWeeklyForecastsObjectPage": {
+                    "type": "Component",
+                    "id": "CashflowWeeklyForecastsObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/CashflowWeeklyForecasts"
+                        }
+                    }
+                }
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.fe.templates.ListReport.ListReportController": {
+                        "controllerName": "hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension"
+                    }
+                }
+            }
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
+    }
+}

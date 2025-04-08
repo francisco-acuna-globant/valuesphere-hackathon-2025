@@ -1,0 +1,17 @@
+{
+  "Component.js": 1742426864310,
+  "manifest.json": 1744132393673,
+  "ext/controller/ListReportExtension.controller.js": 1744066130757,
+  "ext/utils/SpreadsheetHelper.js": 1742510205182,
+  "i18n/i18n.properties": 1742560188530,
+  "Component-dbg.js": 1742426864310,
+  "Component.js.map": 1744132393866,
+  "ext/utils/SpreadsheetHelper-dbg.js": 1742510205182,
+  "ext/utils/SpreadsheetHelper.js.map": 1744132393862,
+  "ext/controller/ListReportExtension-dbg.controller.js": 1744066130757,
+  "ext/controller/ListReportExtension.controller.js.map": 1744132393873,
+  "Component-preload.js": 1744132394080,
+  "Component-preload.js.map": 1744132394080,
+  "ext/fragments/SpreadsheetUploadDialog.fragment.xml": 1742560325794,
+  "index.html": 1742426864310
+}

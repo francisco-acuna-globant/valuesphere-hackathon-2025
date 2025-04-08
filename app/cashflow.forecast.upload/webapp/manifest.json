@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "hackathon.valuesphere.cashflow.forecast",
+    "id": "hackathon.valuesphere.cashflow.forecast.upload",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -12,8 +12,8 @@
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
-      "version": "1.16.5",
-      "toolsId": "07033321-6a42-402d-882b-72518373b7ea"
+      "version": "1.17.1",
+      "toolsId": "dde52695-fa70-4b0a-ab92-6ce91790230b"
     },
     "dataSources": {
       "mainService": {
@@ -45,7 +45,7 @@
   "sap.ui5": {
     "flexEnabled": false,
     "dependencies": {
-      "minUI5Version": "1.133.0",
+      "minUI5Version": "1.134.1",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -60,7 +60,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "hackathon.valuesphere.cashflow.forecast.i18n.i18n"
+          "bundleName": "hackathon.valuesphere.cashflow.forecast.upload.i18n.i18n"
         }
       },
       "": {
@@ -68,9 +68,8 @@
         "preload": true,
         "settings": {
           "operationMode": "Server",
-          "autoExpandSelect": false,
-          "earlyRequests": true,
-          "synchronizationMode": "None"
+          "autoExpandSelect": true,
+          "earlyRequests": true
         }
       },
       "@i18n": {
@@ -114,26 +113,11 @@
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
-                    "type": "GridTable",
-                    "selectionChange": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onTableSelectionChange"
+                    "type": "GridTable"
                   },
                   "actions": {
-                    "approve": {
-                      "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onApprove",
-                      "visible": true,
-                      "enabled": true,
-                      "requiresSelection": true,
-                      "text": "Approve"
-                    },
-                    "reject": {
-                      "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onReject",
-                      "visible": true,
-                      "enabled": true,
-                      "requiresSelection": true,
-                      "text": "Reject"
-                    },
                     "massUpload": {
-                      "press": ".extension.hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension.onMassUpload",
+                      "press": ".extension.hackathon.valuesphere.cashflow.forecast.upload.ext.controller.ListReportExtension.onMassUpload",
                       "visible": true,
                       "enabled": true,
                       "requiresSelection": false,
@@ -163,7 +147,7 @@
       "extensions": {
         "sap.ui.controllerExtensions": {
           "sap.fe.templates.ListReport.ListReportController": {
-            "controllerName": "hackathon.valuesphere.cashflow.forecast.ext.controller.ListReportExtension"
+            "controllerName": "hackathon.valuesphere.cashflow.forecast.upload.ext.controller.ListReportExtension"
           }
         }
       }
