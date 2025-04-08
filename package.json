@@ -36,7 +36,8 @@
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
     "watch-forecast.distribution": "cds watch --open forecast.distribution/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-cashflow.forecast.upload": "cds watch --open cashflow.forecast.upload/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-cashflow.forecast.upload": "cds watch --open cashflow.forecast.upload/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-forecast.distribution.upload": "cds watch --open forecast.distribution.upload/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "server": {
@@ -81,6 +82,7 @@
   "sapux": [
     "app/cashflow.forecast",
     "app/forecast.distribution",
-    "app/cashflow.forecast.upload"
+    "app/cashflow.forecast.upload",
+    "app/forecast.distribution.upload"
   ]
 }

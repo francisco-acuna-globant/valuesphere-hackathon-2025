@@ -47,6 +47,10 @@ modules:
       - hackathonvaluespherecashflowforecastupload.zip
       name: hackathonvaluespherecashflowforecastupload
       target-path: resources/
+    - artifacts:
+      - hackathonvaluesphereforecastdistributionupload.zip
+      name: hackathonvaluesphereforecastdistributionupload
+      target-path: resources/
 - name: hackathonvaluespherecashflowforecast
   type: html5
   path: app/cashflow.forecast
@@ -70,6 +74,16 @@ modules:
 - name: hackathonvaluespherecashflowforecastupload
   type: html5
   path: app/cashflow.forecast.upload
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: hackathonvaluesphereforecastdistributionupload
+  type: html5
+  path: app/forecast.distribution.upload
   build-parameters:
     build-result: dist
     builder: custom

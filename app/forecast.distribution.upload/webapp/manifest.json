@@ -1,0 +1,160 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "hackathon.valuesphere.forecast.distribution.upload",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.17.1",
+      "toolsId": "665bc9de-4555-498f-a8c3-db85b3f36ad9"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/service/cashflowForecast/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.134.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "hackathon.valuesphere.forecast.distribution.upload.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ForecastDistributionPercentageConfigsList",
+          "target": "ForecastDistributionPercentageConfigsList"
+        },
+        {
+          "pattern": "ForecastDistributionPercentageConfigs({key}):?query:",
+          "name": "ForecastDistributionPercentageConfigsObjectPage",
+          "target": "ForecastDistributionPercentageConfigsObjectPage"
+        }
+      ],
+      "targets": {
+        "ForecastDistributionPercentageConfigsList": {
+          "type": "Component",
+          "id": "ForecastDistributionPercentageConfigsList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ForecastDistributionPercentageConfigs",
+              "variantManagement": "Page",
+              "navigation": {
+                "ForecastDistributionPercentageConfigs": {
+                  "detail": {
+                    "route": "ForecastDistributionPercentageConfigsObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "massUpload": {
+                      "press": ".extension.hackathon.valuesphere.forecast.distribution.upload.ext.controller.ListReportExtension.onMassUpload",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "Mass Upload"
+                    }
+                  }
+                }
+              },
+              "initialLoad": "Enabled"
+            }
+          }
+        },
+        "ForecastDistributionPercentageConfigsObjectPage": {
+          "type": "Component",
+          "id": "ForecastDistributionPercentageConfigsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ForecastDistributionPercentageConfigs"
+            }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ListReport.ListReportController": {
+            "controllerName": "hackathon.valuesphere.forecast.distribution.upload.ext.controller.ListReportExtension"
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}
